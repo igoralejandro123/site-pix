@@ -39,13 +39,16 @@ module.exports = async (req, res) => {
 
     const data = await response.json();
 
-    return res.json({
-      id: data.id,
-      qr: data.point_of_interaction.transaction_data.qr_code,
-      qr_img: data.point_of_interaction.transaction_data.qr_code_base64
-    });
+if (!response.ok) {
+  return res.status(400).json({
+    error: "Erro Mercado Pago",
+    details: data
+  });
+}
 
-  } catch (err) {
-    return res.status(500).json({ error: "Erro interno", details: err.message });
-  }
-};
+return res.json({
+  id: data.id,
+  qr: data.point_of_interaction.transaction_data.qr_code,
+  qr_img: data.point_of_interaction.transaction_data.qr_code_base64
+});
+
