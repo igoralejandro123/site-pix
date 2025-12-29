@@ -9,7 +9,12 @@ module.exports = async (req, res) => {
       return res.status(405).json({ error: "Método não permitido" });
     }
 
-    const { plano } = req.body;
+    const plano = String(req.body.plano || "")
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "")
+  .trim();
+
 
     const planos = {
       basico: 9.9,
