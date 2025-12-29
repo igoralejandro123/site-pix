@@ -254,7 +254,7 @@ As vagas são renovadas diariamente para evitar sobrecarga no grupo<br>
 </ul>
 </div>
 
-<!-- VÍDEO DE APRESENTAÇÃO -->
+<!-- VÍDEO CENTRAL (AUTOPLAY / LOOP / SEM PLAYER) -->
 <div style="
   margin: 28px 0;
   border-radius: 18px;
@@ -269,9 +269,11 @@ As vagas são renovadas diariamente para evitar sobrecarga no grupo<br>
   ">
     <video
       src="video-apresentacao.mp4"
-      controls
+      autoplay
+      muted
+      loop
       playsinline
-      preload="metadata"
+      preload="auto"
       style="
         position: absolute;
         top: 0;
@@ -279,10 +281,12 @@ As vagas são renovadas diariamente para evitar sobrecarga no grupo<br>
         width: 100%;
         height: 100%;
         object-fit: cover;
+        pointer-events: none;
       ">
     </video>
   </div>
 </div>
+
 
 
 <div style="
@@ -867,4 +871,5 @@ timerStatus = setTimeout(verificarPagamento, 4000);
 
 </body>
 </html>
+
 
