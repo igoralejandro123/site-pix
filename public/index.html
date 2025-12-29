@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verificação de Idade</title>
+
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','897332373246738');
+fbq('track','PageView')
+</script>
+
+<style>
+body{
+margin:0;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Arial,sans-serif;
+background:#0e0e0e;
+color:#fff;
+text-align:center;
+}
+.btn{
+display:block;
+margin:15px auto;
+padding:18px 40px;
+border-radius:50px;
+font-size:26px;
+font-weight:bold;
+text-decoration:none;
+color:#fff;
+max-width:300px
+}
+.yes{background:#15c315}
+.no{background:#d11b1b}
+small{opacity:.7}
+</style>
+</head>
+
+<body>
+
+<div>
+  <h1>Você tem 18 anos ou mais?</h1>
+
+  <!-- DESTINO CORRETO -->
+  <a href="page2.html" class="btn yes">Sim</a>
+
+  <a href="https://google.com" class="btn no">Não</a>
+
+  <small>Conteúdo exclusivo para adultos</small>
+</div>
+
+</body>
+</html>
