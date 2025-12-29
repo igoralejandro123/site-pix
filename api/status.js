@@ -1,3 +1,6 @@
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+
 module.exports = async (req, res) => {
   try {
     if (req.method !== "GET") {
@@ -21,6 +24,13 @@ module.exports = async (req, res) => {
 
     const data = await response.json();
 
+    if (!response.ok) {
+      return res.status(400).json({
+        error: "Erro Mercado Pago",
+        details: data
+      });
+    }
+
     if (data.status !== "approved") {
       return res.json({ status: data.status });
     }
@@ -28,10 +38,13 @@ module.exports = async (req, res) => {
     return res.json({
       status: "approved",
       value: data.transaction_amount,
-      telegram: "https://t.me/seugrupo"
+      currency: data.currency_id || "BRL"
     });
 
   } catch (err) {
-    return res.status(500).json({ error: "Erro interno" });
+    return res.status(500).json({
+      error: "Erro interno",
+      details: err.message
+    });
   }
 };
