@@ -1,8 +1,5 @@
 const crypto = require("crypto");
 
-const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
-
 module.exports = async (req, res) => {
   try {
     if (req.method !== "POST") {
@@ -10,11 +7,10 @@ module.exports = async (req, res) => {
     }
 
     const plano = String(req.body.plano || "")
-  .toLowerCase()
-  .normalize("NFD")
-  .replace(/[\u0300-\u036f]/g, "")
-  .trim();
-
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
 
     const planos = {
       basico: 9.9,
@@ -23,7 +19,7 @@ module.exports = async (req, res) => {
     };
 
     if (!planos[plano]) {
-      return res.status(400).json({ error: "Plano inválido" });
+      return res.status(400).json({ error: "Plano inválido", plano });
     }
 
     const response = await fetch("https://api.mercadopago.com/v1/payments", {
@@ -57,6 +53,7 @@ module.exports = async (req, res) => {
       qr: data.point_of_interaction.transaction_data.qr_code,
       qr_img: data.point_of_interaction.transaction_data.qr_code_base64
     });
+
   } catch (err) {
     return res.status(500).json({
       error: "Erro interno",
