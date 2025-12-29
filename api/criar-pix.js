@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
         payment_method_id: "pix",
         description: `Plano ${plano}`,
         payer: {
-          email: "cliente@email.com"
+          email: "igorraizen@hotmail.com"
         }
       })
     });
