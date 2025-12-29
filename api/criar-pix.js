@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
@@ -11,9 +12,9 @@ module.exports = async (req, res) => {
     const { plano } = req.body;
 
     const planos = {
-      basico: 9.90,
-      padrao: 16.90,
-      premium: 25.90
+      basico: 9.9,
+      padrao: 16.9,
+      premium: 25.9
     };
 
     if (!planos[plano]) {
@@ -39,16 +40,22 @@ module.exports = async (req, res) => {
 
     const data = await response.json();
 
-if (!response.ok) {
-  return res.status(400).json({
-    error: "Erro Mercado Pago",
-    details: data
-  });
-}
+    if (!response.ok) {
+      return res.status(400).json({
+        error: "Erro Mercado Pago",
+        details: data
+      });
+    }
 
-return res.json({
-  id: data.id,
-  qr: data.point_of_interaction.transaction_data.qr_code,
-  qr_img: data.point_of_interaction.transaction_data.qr_code_base64
-});
-
+    return res.json({
+      id: data.id,
+      qr: data.point_of_interaction.transaction_data.qr_code,
+      qr_img: data.point_of_interaction.transaction_data.qr_code_base64
+    });
+  } catch (err) {
+    return res.status(500).json({
+      error: "Erro interno",
+      details: err.message
+    });
+  }
+};
