@@ -309,25 +309,25 @@ As vagas são renovadas diariamente para evitar sobrecarga no grupo<br>
 
 
 
-<!-- PLANO 19,90 -->
+<!-- PLANO 14,90 -->
 <div class="plan">
 <h3>🥉Plano Básico🔥</h3>
 <p>Entrar no VIP</p>
 <div class="old-price">De R$ 29,90</div>
-<div class="price">R$ 9,90</div>
+<div class="price">R$ 14,90</div>
 <a href="javascript:void(0)" class="cta"
-onclick="abrirPrePix('basico','Plano Básico • Acesso VIP','R$ 9,90')">
+onclick="iniciarCheckout('basico')">
 Entrar no VIP
 </a>
 <div class="plan-note">Acesso ao grupo VIP</div>
 </div>
 
-<!-- PLANO 29,90 -->
+<!-- PLANO 25,90 -->
 <div class="plan featured">
 <h3>🥈Plano Padrão😈</h3>
 <p>Recomendado para quem quer acesso completo</p>
 <div class="old-price">De R$ 39,90</div>
-<div class="price">R$ 16,90</div>
+<div class="price">R$ 25,90</div>
 <div style="
   font-size:13px;
   color:#ffd1e8;
@@ -337,20 +337,20 @@ Entrar no VIP
 ⏰ Mais escolhido nas últimas horas
 </div>
 <a href="javascript:void(0)" class="cta"
-onclick="abrirPrePix('padrao','Plano Padrão • Acesso Completo','R$ 16,90')">
+onclick="iniciarCheckout('padrao')">
 🔥 Liberar acesso imediato
 </a>
 <div class="plan-note">🔥 Plano mais escolhido • 💎 Melhor custo-benefício</div>
 </div>
 
-<!-- PLANO 49,90 -->
+<!-- PLANO 35,90 -->
 <div class="plan">
 <h3>🥇VIP Completo☠️</h3>
 <p>Acesso total + 5 grupos<br>TUDO LIBERADO</p>
 <div class="old-price">De R$ 59,90</div>
-<div class="price">R$ 25,90</div>
+<div class="price">R$ 35,90</div>
 <a href="javascript:void(0)" class="cta"
-onclick="abrirPrePix('premium','VIP Completo • Tudo Liberado','R$ 25,90')">
+onclick="iniciarCheckout('premium')">
 🚀 Quero tudo liberado
 </a>
 <div class="plan-note">Máximo nível de acesso</div>
@@ -471,172 +471,6 @@ Todo o conteúdo envolve apenas adultos maiores de 18 anos, em situações conse
 </div>
 
 
-<!-- ===========================
-     MODAL MP (PRÉ-PIX)
-=========================== -->
-<div id="mpPrePix" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:99999; align-items:center; justify-content:center; padding:18px; box-sizing:border-box;">
-  <div style="width:100%; max-width:420px; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.6);">
-    
-    <div style="background:#009ee3; padding:18px; text-align:center;">
-      <img src="mercado-pago-logo.png" alt="Mercado Pago" style="height:30px;">
-    </div>
-
-    <div style="padding:18px;">
-      <div style="background:#f5f7fa; border-radius:12px; padding:14px; margin-bottom:16px;">
-        <div id="mpItemTitle" style="font-size:15px; font-weight:700; color:#0b2545; margin-bottom:6px;">Acesso VIP • Conteúdo Exclusivo</div>
-        <div id="mpItemPrice" style="font-size:22px; font-weight:900; color:#0b2545;">R$ 00,00</div>
-        <div style="font-size:13px; color:#6b7280;">Pagamento via Pix • Aprovação imediata</div>
-      </div>
-
-     <div style="
-  background:#f5faff;
-  border:1px solid #dbeafe;
-  border-radius:12px;
-  padding:14px;
-  margin-bottom:14px;
-">
-  <div style="
-    font-size:14px;
-    font-weight:700;
-    color:#1f2937;
-    margin-bottom:10px;
-  ">
-    Como pagar (é fácil):
-  </div>
-
-  <div style="
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    font-size:13px;
-    color:#374151;
-    margin-bottom:8px;
-  ">
-    <span style="
-      background:#009ee3;
-      color:#fff;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px;
-      font-weight:700;
-      flex-shrink:0;
-    ">1</span>
-    Clique em <b>Gerar Código Pix</b>
-  </div>
-
-  <div style="
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    font-size:13px;
-    color:#374151;
-    margin-bottom:8px;
-  ">
-    <span style="
-      background:#009ee3;
-      color:#fff;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px;
-      font-weight:700;
-      flex-shrink:0;
-    ">2</span>
-    Abra o app do seu banco
-  </div>
-
-  <div style="
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    font-size:13px;
-    color:#374151;
-    margin-bottom:8px;
-  ">
-    <span style="
-      background:#009ee3;
-      color:#fff;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px;
-      font-weight:700;
-      flex-shrink:0;
-    ">3</span>
-    Vá em <b>Pix → Copia e Cola</b>
-  </div>
-
-  <div style="
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    font-size:13px;
-    color:#374151;
-  ">
-    <span style="
-      background:#009ee3;
-      color:#fff;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px;
-      font-weight:700;
-      flex-shrink:0;
-    ">4</span>
-    Cole o código e finalize o pagamento
-  </div>
-</div>
-
-
-
- <button id="btnGerarPix"
-  style="
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:50px;
-    color:#fff;
-    font-size:17px;
-    font-weight:900;
-    cursor:pointer;
-    position:relative;
-    overflow:hidden;
-  ">
-  <span id="btnText">Gerar Código Pix</span>
-</button>
-
-
-      <div style="margin-top:10px; font-size:13px; color:#6b7280; display:flex; justify-content:center; gap:14px;">
-        <span>🔒 Ambiente seguro</span>
-        <span>⚡ Liberação rápida</span>
-      </div>
-
-      <div style="margin-top:14px; text-align:center;">
-        <button onclick="fecharPrePix()" style="background:transparent; border:none; color:#6b7280; font-weight:700; cursor:pointer;">
-          Cancelar
-        </button>
-      </div>
-    </div>
-
-    <div style="text-align:center; font-size:12px; color:#6b7280; padding:14px;">
-      Pagamento processado pelo Mercado Pago
-    </div>
-  </div>
-</div>
-
 <!-- OVERLAY REDIRECIONAMENTO MP -->
 <div id="mpRedirect"
   style="
@@ -663,6 +497,21 @@ Todo o conteúdo envolve apenas adultos maiores de 18 anos, em situações conse
   </div>
 </div>
 
+	<script>
+function iniciarCheckout(plano){
+  fbq('track','InitiateCheckout');
+
+  const redirect = document.getElementById("mpRedirect");
+  redirect.style.display = "flex";
+
+  setTimeout(() => {
+    redirect.style.display = "none";
+    comprar(plano);
+  }, 1200);
+}
+</script>
+
+
 
 <script>
 let vcDisparado = false;
@@ -676,64 +525,6 @@ window.addEventListener('scroll', () => {
     fbq('track','ViewContent');
   }
 });
-</script>
-
-<script>
-let planoSelecionado = null;
-
-function abrirPrePix(plano, titulo, preco){
-  planoSelecionado = plano;
-
-  document.getElementById("mpItemTitle").innerText = titulo || "Acesso VIP • Conteúdo Exclusivo";
-  document.getElementById("mpItemPrice").innerText = preco || "R$ 00,00";
-
-  // mostra overlay de redirecionamento
-const redirect = document.getElementById("mpRedirect");
-redirect.style.display = "flex";
-
-// após curto delay, abre o modal MP
-setTimeout(() => {
-  redirect.style.display = "none";
-  document.getElementById("mpPrePix").style.display = "flex";
-}, 2000);
-
-
-  const btn = document.getElementById("btnGerarPix");
-
-btn.onclick = async () => {
-  fbq('track','InitiateCheckout');
-
-  // trava largura atual
-  const larguraAtual = btn.offsetWidth;
-  btn.style.width = larguraAtual + "px";
-
-  // inicia animação (encolher = carregamento)
-  requestAnimationFrame(() => {
-    btn.classList.add("loading");
-  });
-
-  // gera o Pix enquanto o botão está encolhendo
-  await comprar(planoSelecionado);
-
-  // quando terminar de encolher (~3s), troca o modal
-  setTimeout(() => {
-    fecharPrePix();
-
-    // reset visual (caso volte)
-    btn.classList.remove("loading");
-    btn.style.width = "100%";
-  }, 3000);
-};
-
-
-
-
-
-}
-
-function fecharPrePix(){
-  document.getElementById("mpPrePix").style.display = "none";
-}
 </script>
 
 
@@ -871,5 +662,6 @@ timerStatus = setTimeout(verificarPagamento, 4000);
 
 </body>
 </html>
+
 
 
