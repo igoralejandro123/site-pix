@@ -13,10 +13,11 @@ module.exports = async (req, res) => {
       .trim();
 
     const planos = {
-      basico: 9.9,
-      padrao: 16.9,
-      premium: 25.9
-    };
+  basico: 14.9,
+  padrao: 25.9,
+  premium: 35.9
+  };
+
 
     if (!planos[plano]) {
       return res.status(400).json({ error: "Plano inválido", plano });
